@@ -22,7 +22,7 @@ namespace i2cLineSensor {
         // basic.pause(200)
         
         let readbuf = pins.i2cReadBuffer(LINESENSOR_I2C_ADDR, pins.sizeOf(NumberFormat.UInt8LE))
-        let irReadings = readbuf & 0x1F
+        let irReadings = Number(readbuf & 0x1F)
 
         return irReadings       
     }
@@ -36,6 +36,6 @@ namespace i2cLineSensor {
     //% weight=90 
     export function isLineDetected(pos: number): number {
         let readbuf = pins.i2cReadBuffer(LINESENSOR_I2C_ADDR, pins.sizeOf(NumberFormat.UInt8LE))
-        return ((readbuf & (0x1 << (number-1))) != 0 )
+        return Number(((readbuf & (0x1 << (pos-1))) != 0 ))
     }
 }
