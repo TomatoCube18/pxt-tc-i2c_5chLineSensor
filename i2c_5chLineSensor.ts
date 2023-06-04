@@ -9,7 +9,7 @@ namespace i2cLineSensor {
     /**
      * Read IRs from 5 Channel Line Sensor.
      */
-    //% blockId="linesensor_read_ir" block="i2c,IR(Binary)"
+    //% blockId="linesensor_read_ir" block="i2c,IR_Line(Binary)"
     //% weight=100 
     export function readIR(): number {
         
@@ -31,8 +31,8 @@ namespace i2cLineSensor {
      * Query IR from 5 Channel Line Sensor at position x.
      */
     //% blockId="is_line_detected"
-    //% block="Is Line detected at %pos"
-    //% pos.min=1 group.max=5
+    //% block="Is Line detected at IR Position %pos"
+    //% pos.min=1 pos.max=5
     //% weight=90 
     export function isLineDetected(pos: number): boolean {
         let readbuf = pins.i2cReadBuffer(LINESENSOR_I2C_ADDR, pins.sizeOf(NumberFormat.UInt8LE))
