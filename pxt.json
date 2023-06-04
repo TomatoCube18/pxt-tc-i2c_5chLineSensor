@@ -1,0 +1,17 @@
+{
+    "name": "TC-I2C-5CH_LineSensor",
+    "version": "1.0.0",
+    "description": "Makecode block for I2C 5-Channel LineSensor",
+    "license": "MIT",
+    "dependencies": {
+        "core": "*"
+    },
+    "files": [
+        "README.md",
+        "i2c_5chLineSensor.ts"
+    ],
+    "testFiles": [
+        "test.ts"
+    ],
+    "public": true
+}
