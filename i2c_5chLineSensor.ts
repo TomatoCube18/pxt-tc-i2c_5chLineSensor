@@ -32,7 +32,7 @@ namespace i2cLineSensor {
      */
     //% blockId="is_line_detected"
     //% block="Is Line detected at IR Position %pos"
-    //% pos.min=1 pos.max=5
+    //% pos.min=1 pos.max=5 pos.defl=1
     //% weight=90 
     export function isLineDetected(pos: number): boolean {
         let readbuf = pins.i2cReadBuffer(LINESENSOR_I2C_ADDR, pins.sizeOf(NumberFormat.UInt8LE))
